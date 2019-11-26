@@ -29,6 +29,11 @@ python3 model1_xgboost.py
 ```
 This script will build xgboost model and do prediction, then generate the result csv file. 
 
+- Model 2
+``` python
+python3 model2_ridge_regression.py
+```
+This script will build ridge regression model and do prediction, then generate the result scv file.
 
 ## Data Cleansing
 
