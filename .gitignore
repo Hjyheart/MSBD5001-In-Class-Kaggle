@@ -106,9 +106,4 @@ venv.bak/
 # model
 *.pkl
 
-# data
-Data/
-
 .DS_Store
-
-*.csv
