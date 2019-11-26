@@ -26,7 +26,7 @@ params = {
 
 if __name__ == "__main__":
     # Load training vecotrs
-    t_v = joblib.load('./training_vectors.pkl')
+    t_v = joblib.load('../Features/training_vectors.pkl')
     X = t_v['X']
     Y = t_v['Y']
 
@@ -37,9 +37,9 @@ if __name__ == "__main__":
 
     # Load testing data and others
     test_df = pd.read_csv('../Data/test.csv')
-    cats = joblib.load('./cats.pkl')
-    genres = joblib.load('./genres.pkl')
-    tags = joblib.load('./tags.pkl')
+    cats = joblib.load('../Features/cats.pkl')
+    genres = joblib.load('../Features/genres.pkl')
+    tags = joblib.load('../Features/tags.pkl')
 
     # Create testing vectors
     test_df = clean_test(test_df)
@@ -60,4 +60,4 @@ if __name__ == "__main__":
     print(ans)
 
     output = pd.DataFrame({'playtime_forever': ans}, columns=['playtime_forever'])\
-        .to_csv('./results/xgboost_result_t.csv', index_label='id')
+        .to_csv('../Results/xgboost_result_t.csv', index_label='id')

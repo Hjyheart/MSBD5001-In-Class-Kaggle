@@ -16,6 +16,16 @@ Based on what I have learnt from MSBD5001, here are major steps for this project
 ## How to generate two results
 This project is done by **Python3**. I split codes by functions and put them into several scripts.
 
+### Packages Needed
+
+- Pandas
+- Numpy
+- Sklearn
+- Xgboost
+- Joblib
+
+### Commands
+
 - Data Cleasing Script
 
 ``` python

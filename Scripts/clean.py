@@ -152,7 +152,7 @@ if __name__ == "__main__":
     all_cat = sorted(all_cat.items(), key=lambda x:x[1], reverse=True)[5:]
     cats = [x[0] for x in all_cat]
 
-    joblib.dump(cats, 'cats.pkl')
+    joblib.dump(cats, '../Features/cats.pkl')
 
     # Clean genres and store
     all_genres = {}
@@ -164,7 +164,7 @@ if __name__ == "__main__":
                 all_genres[attr] += 1
     genres = [x for x in all_genres.keys()]
 
-    joblib.dump(genres, './genres.pkl')
+    joblib.dump(genres, '../Features/genres.pkl')
 
     # Clean tags and store
     all_tags = {}
@@ -179,7 +179,7 @@ if __name__ == "__main__":
     all_tags = sorted(all_tags.items(), key=lambda x: x[1], reverse=True)[4:70]
     tags = [x[0] for x in all_tags]
 
-    joblib.dump(tags, './tags.pkl')
+    joblib.dump(tags, '../Features/tags.pkl')
 
     # Create new feature time_gap: time between purchase_data and release_data
     df['purchase_date'] = pd.to_datetime(df['purchase_date'], infer_datetime_format=True)
@@ -194,4 +194,4 @@ if __name__ == "__main__":
 
     # Create training vectors and store
     tx, ty = training_data_prpare(df, cats, genres, tags)
-    joblib.dump({'X': tx, 'Y': ty}, './training_vectors.pkl')
+    joblib.dump({'X': tx, 'Y': ty}, '../Features/training_vectors.pkl')
