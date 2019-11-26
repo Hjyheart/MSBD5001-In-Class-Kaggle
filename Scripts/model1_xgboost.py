@@ -43,10 +43,10 @@ if __name__ == "__main__":
 
     # Create testing vectors
     test_df = clean_test(test_df)
-    X = predict_data_prpare(test_df, cats, genres, tags)
+    test_X = predict_data_prpare(test_df, cats, genres, tags)
 
     # Predict
-    test_x = xgb.DMatrix(X)
+    test_x = xgb.DMatrix(test_X)
     ans = model.predict(test_x)
 
     # Smooth the result
@@ -60,4 +60,4 @@ if __name__ == "__main__":
     print(ans)
 
     output = pd.DataFrame({'playtime_forever': ans}, columns=['playtime_forever'])\
-        .to_csv('xgboost_result.csv', index_label='id')
+        .to_csv('./results/xgboost_result_t.csv', index_label='id')

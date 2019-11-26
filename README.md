@@ -11,9 +11,7 @@ Based on what I have learnt from MSBD5001, here are major steps for this project
 - Data Cleansing
 - Feature Engineering
 - Training Data Preparation
-- Modeling
-- Tuning
-- Prediction
+- Modeling & Tuning
 
 ## How to generate two results
 This project is done by **Python3**. I split codes by functions and put them into several scripts.
@@ -75,16 +73,29 @@ There are 312 different tags in total in training data. 312 is too large, I don'
 ```
 
 ### feature selection 
+I put all features together and run xgboost, then drew feature importance:
+
+![img](./Scripts/all_features.png)
+
+Then I filtered out some features with low importance.
 
 ## Training Data format
 
-## Modeling & Tuning
+|genres|categories|tags|is_free|price|time_gap|average_review|
+|-|-|-|-|-|-|-|
+|one hot|one hot|one hot|boolean|normalized|normalized|normalized|
+
+## Modeling
 
 ### xgboosting
+Parameters after tunning:
 
-### adaboost
+|learning_rate|booster|objective|gamma|max_depth|lambda|subsample|colsample_bytree|min_child_weight|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|0.1|gbtree|reg:gamma|0.1|7|3|0.9|0.9|3|
 
-## Prediction
+### ridge regression
 
+Optimized alpha: 133.4
 
 
