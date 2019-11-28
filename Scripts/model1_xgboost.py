@@ -60,4 +60,4 @@ if __name__ == "__main__":
     print(ans)
 
     output = pd.DataFrame({'playtime_forever': ans}, columns=['playtime_forever'])\
-        .to_csv('../Results/xgboost_result_t.csv', index_label='id')
+        .to_csv('../Results/xgboost_result.csv', index_label='id')
